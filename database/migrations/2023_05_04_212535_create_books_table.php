@@ -18,6 +18,7 @@ class CreateBooksTable extends Migration
 
             $table->string('title');
             $table->string('author');
+            $table->softDeletes();
 
             $table->timestamps();
         });

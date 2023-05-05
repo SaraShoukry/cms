@@ -19,6 +19,7 @@ class CreateStudentsTable extends Migration
             $table->date('birthdate');
             $table->float('grade');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

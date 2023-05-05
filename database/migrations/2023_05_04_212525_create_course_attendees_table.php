@@ -19,6 +19,7 @@ class CreateCourseAttendeesTable extends Migration
             $table->unsignedBigInteger('course_id');
 
             $table->integer('score');
+            $table->softDeletes();
 
             $table->foreign('student_id')->references('id')->on('students');
             $table->foreign('course_id')->references('id')->on('courses');

@@ -20,11 +20,12 @@ class CreateBorrowsTable extends Migration
 
             $table->date('start_date');
             $table->date('end_date');
+            $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('book_id')->references('id')->on('books');
             $table->foreign('customer_id')->references('id')->on('customers');
 
-            $table->timestamps();
         });
     }
 
