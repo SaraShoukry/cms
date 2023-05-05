@@ -2,6 +2,12 @@
 
 namespace App\Providers;
 
+use App\Interfaces\CourseRepositoryInterface;
+use App\Interfaces\StudentRepositoryInterface;
+use App\Interfaces\InstructorRepositoryInterface;
+use App\Repositories\CourseRepository;
+use App\Repositories\InstructorRepository;
+use App\Repositories\StudentRepository;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +19,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(StudentRepositoryInterface::class, StudentRepository::class);
     }
 
     /**

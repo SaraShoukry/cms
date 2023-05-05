@@ -17,7 +17,7 @@ class CreateInstructorsTable extends Migration
             $table->id();
             $table->string('name');
             $table->date('birthdate');
-            $table->integer('years_of_experience');
+            $table->integer('years_of_experience')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });
