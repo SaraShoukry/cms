@@ -10,9 +10,10 @@ class OperatorResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => (new Hashids('', 6, ''))->encode($this->id),
-            'name_ar' => $this->name_ar,
-            'name_en' => $this->name_en,
+            'id' => $this->id,
+            'name' => $this->name,
+            'username' => $this->username,
+            'email' => $this->email,
         ];
     }
 }
