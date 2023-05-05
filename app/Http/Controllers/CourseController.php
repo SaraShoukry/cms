@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\CourseCollection;
+use App\Http\Resources\CourseResource;
 use App\Interfaces\CourseRepositoryInterface;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -25,7 +27,7 @@ class CourseController extends Controller
         $offset = $request->get('offset', 10);
 
         return response()->json([
-            'data' => $this->courseRepository->getAllCourses($offset, $page)
+            'data' =>  new CourseCollection($this->courseRepository->getAllCourses($offset, $page))
         ]);
     }
 
@@ -34,7 +36,7 @@ class CourseController extends Controller
         $courseId = $request->route('id');
 
         return response()->json([
-            'data' => $this->courseRepository->getCourseById($courseId)
+            'data' => new CourseResource($this->courseRepository->getCourseById($courseId))
         ]);
     }
 
