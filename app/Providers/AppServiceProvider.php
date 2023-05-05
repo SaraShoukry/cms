@@ -20,6 +20,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(StudentRepositoryInterface::class, StudentRepository::class);
+        $this->app->bind(InstructorRepositoryInterface::class, InstructorRepository::class);
     }
 
     /**

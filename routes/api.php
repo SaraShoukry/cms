@@ -44,3 +44,10 @@ Route::group(['prefix' => 'students'], function ($router) {
     $router->post('/edit', [\App\Http\Controllers\StudentController::class, 'update']);
     $router->delete('/{id}', [\App\Http\Controllers\StudentController::class, 'delete']);
 });
+Route::group(['prefix' => 'instructors'], function ($router) {
+    $router->get('/', [\App\Http\Controllers\InstructorController::class, 'index']);
+    $router->get('/{id}', [\App\Http\Controllers\InstructorController::class, 'show']);
+    $router->post('', [\App\Http\Controllers\InstructorController::class, 'store']);
+    $router->post('/edit', [\App\Http\Controllers\InstructorController::class, 'update']);
+    $router->delete('/{id}', [\App\Http\Controllers\InstructorController::class, 'delete']);
+});
