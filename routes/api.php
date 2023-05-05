@@ -51,3 +51,10 @@ Route::group(['prefix' => 'instructors'], function ($router) {
     $router->post('/edit', [\App\Http\Controllers\InstructorController::class, 'update']);
     $router->delete('/{id}', [\App\Http\Controllers\InstructorController::class, 'delete']);
 });
+Route::group(['prefix' => 'courses'], function ($router) {
+    $router->get('/', [\App\Http\Controllers\CourseController::class, 'index']);
+    $router->get('/{id}', [\App\Http\Controllers\CourseController::class, 'show']);
+    $router->post('', [\App\Http\Controllers\CourseController::class, 'store']);
+    $router->post('/edit', [\App\Http\Controllers\CourseController::class, 'update']);
+    $router->delete('/{id}', [\App\Http\Controllers\CourseController::class, 'delete']);
+});

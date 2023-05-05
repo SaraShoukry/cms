@@ -57,7 +57,8 @@ class OperatorController extends Controller
         ));
 
         return response()->json([
-            'operator' => $operator
+            'operator' => $operator,
+            'msg' => __('messages.operator_saved')
         ]);
 
     }
@@ -83,7 +84,8 @@ class OperatorController extends Controller
         $operator->save();
 
         return response()->json([
-            'operator' => $operator
+            'operator' => $operator,
+            'msg' => __('messages.operator_updated')
         ]);
     }
 
